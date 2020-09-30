@@ -1,4 +1,5 @@
-# Asked user to enter their name, age, height and weight
+# Asks user to enter their name, age, height and weight
+#Storing values as strings, floats and intergers respectively
 print("What is your name human?")
 name = input()
 print("How old are you (in years)?")

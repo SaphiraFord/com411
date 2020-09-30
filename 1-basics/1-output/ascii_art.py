@@ -11,14 +11,7 @@
  print                          :\   /:
  print                         / \\,// \
  print                        /  /|'|\  \
- print                       /  / | | \  \
- print                      '-_/--|_|--\_-`
- print                        |    |    |
- print                        |    |    |
- print                        |    |    |
- print                         |   |   |
- print                         |   |   |
- print                          |  |  |
+                              
  print                          |  |  |
  print                           | | |
  print                          :/\|/\;
