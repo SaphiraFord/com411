@@ -13,6 +13,10 @@ weight = float(input())
 
 bmi= float(weight / (height * height))
 
+#rounded down the bmi to 2 decimal places
+
+roundedBmi = round(bmi, 2)
+
 #outputting bmi and other inputs to user
 
-print(name,"you are ",age,"  years old and you bmi is ",bmi,".")
+print(name,"you are ",age,"  years old and you bmi is ", roundedBmi,".")
