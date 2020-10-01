@@ -1,6 +1,6 @@
 #I have now learnt a number of fundamental programming concepts including displaying text, reading user input, storing data and converting between data types. And I can use these to create a range of simple programs.
 
-#Below I will create a program that demonstrates all I have learned
+#Below I have created a program that demonstrates all I have learned
 
 print("I have almost created a robot named Bob, please input characters for his eyes to complete him...")
 
@@ -12,9 +12,10 @@ rightEye = input("Please enter a character for the right eye")
 #Outputting a robot with eyes that are inputted by the user
 
 print("##########")
-print("# ()   ()  #".format(leftEye, rightEye))
+print("# {}   {}  #".format(leftEye, rightEye))
 print("#        #")
 print("##########")  
+
 
 print("Thank you, I would now like to calculate his BMI for research purposes if you could answer the following questions...")
 
@@ -32,9 +33,13 @@ weight = float(input())
 
 bmi= float(weight / (height * height))
 
+#rounded down the bmi to 2 decimal places
+
+roundedBmi = round(bmi, 2)
+
 #outputting bmi and other inputs to user
 
-print("Bob is ",age,"  years old and his bmi is ",bmi,".")
+print("Bob is ",age,"  years old and his bmi is ", roundedBmi,".")
 
 print("Thank you, finally if you could help input his lives, energy levels and shield levels he will be complete...")
 
@@ -56,3 +61,5 @@ print("Shields have been set")
 print("Lives:   " ,lives * "♥")
 print("Energy:  " ,energy * "♦")
 print("Shield:  " ,shield * "♦")
+
+print("Thank you assisting with Bob's creation.")
