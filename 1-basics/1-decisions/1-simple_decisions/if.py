@@ -5,4 +5,4 @@ print("What type of book is this?")
 book = input()
 if (book == "adventure"):
   print("Adventure books are the best!!")
-  print("Finished reading the book") 
+print("Finished reading the book") 
