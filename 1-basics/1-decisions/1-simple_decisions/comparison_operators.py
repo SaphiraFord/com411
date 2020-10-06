@@ -5,7 +5,7 @@ print("Please input the 2nd number.")
 number2 = input() 
 
 
-# Finding out the smallest, largest and if two numbers are equal 
+# Finding out the smallest, largest and if two numbers are equal and outputting it
 if (number1 < number2):
     print("\nThe first number is the smallest!!")
 elif (number1 > number2):
