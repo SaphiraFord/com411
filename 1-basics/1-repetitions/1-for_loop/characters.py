@@ -1,4 +1,4 @@
-#Getting the suer to input what markings they see and storing this variable
+#Getting the user to input what markings they see and storing this variable
 print("What strange markings do you see?")
 markings = input()
 
