@@ -1,1 +1,0 @@
-print("Practise more concepts")
