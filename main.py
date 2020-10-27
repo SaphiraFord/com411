@@ -70,7 +70,6 @@ import basics.repetitions.while_loop.ascii as ascii
 
 
 
-
 def run_block_a():
     print("Which program in 'Block A: Basics' do you wish to run?")
     response = input()
