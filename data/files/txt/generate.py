@@ -1,7 +1,11 @@
 #Function that takes the parameter of file name, searches for it, opens it and if a line starts with "section" it will split the line into string and add it to the list "section_name"
 def search(namefile):
   print ("Searching...")
+
+#Creating empty dictionary "data" to hold data in
+
   data = {}
+  
   with open(namefile) as file:
 
 #Creates empty list to hold the key for the dictionary
