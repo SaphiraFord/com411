@@ -1,18 +1,22 @@
-#Human class
-class Human:
+#Robot class
+class Robot:
 
   #A class attribute 
   #Capitalized attributes are constant
   MAX_ENERGY = 100
+  laws = "Protect, Obey and Survive"
 
+  # A class method
+  def the_laws():
+    print(Robot.laws)
 
   # An initialiser (special instance method)
   def __init__(self):
 
     # An instance attribute
-    self.name = "Human"
+    self.name = "Robot"
     self.age = 0
-    self.energy = Human.MAX_ENERGY
+    self.energy = Robot.MAX_ENERGY
 
   #Method to grow the robot and + its age by 1
   def grow(self):
@@ -22,8 +26,8 @@ class Human:
   def eat(self, amount):
 
     #If the robot energy + the amount of energy is bigger than the max energy then the energy will be set to the robots max energy
-    if (self.energy + amount > Human.MAX_ENERGY):
-      self.energy = Human.MAX_ENERGY
+    if (self.energy + amount > Robot.MAX_ENERGY):
+      self.energy = Robot.MAX_ENERGY
       #Else + the amount of energy to the robots energy
     else:
       self.energy += amount
@@ -42,23 +46,23 @@ class Human:
       self.energy = potentialenergy
       return 0
 
-  # An instance method which says the robots name
+  # An instance method
   def display(self):
     print(f"I am {self.name}")
-  
+
   #Magic methods (repr) returns a formal string representation of the object whilst (str) returns an informal string representation of the object.
 
   def __repr__(self):
-    return f'human(name={self.name}, age={self.age}, energy={self.energy})'
+    return f'robot(name={self.name}, age={self.age}, energy={self.energy})'
 
   def __str__(self):
-    return f'human(name={self.name}, age={self.age}, energy={self.energy})'
+    return f'robot(name={self.name}, age={self.age}, energy={self.energy})'
 
 if (__name__ == "__main__"):
-  human = Human()
-  human.display()
-  print(human.__repr__())
-  human.grow()
-  human.move(10)
-  human.eat(5)
-  print(repr(human))
+  robot = Robot()
+  robot.display()
+  print(robot.__repr__())
+  robot.grow()
+  robot.move(10)
+  robot.eat(5)
+  print(repr(robot))
