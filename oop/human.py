@@ -7,11 +7,11 @@ class Human:
 
 
   # An initialiser (special instance method)
-  def __init__(self):
+  def __init__(self, name = "Human", age = 0, energy = 0):
 
     # An instance attribute
-    self.name = "Human"
-    self.age = 0
+    self.name = name
+    self.age = age
     self.energy = Human.MAX_ENERGY
 
   #Method to grow the robot and + its age by 1
@@ -44,7 +44,7 @@ class Human:
 
   # An instance method which says the robots name
   def display(self):
-    print(f"I am {self.name}")
+    print(f"My name is {self.name} and I am {self.age} years old and I have {self.energy} energy.")
   
   #Magic methods (repr) returns a formal string representation of the object whilst (str) returns an informal string representation of the object.
 
@@ -52,13 +52,14 @@ class Human:
     return f'human(name={self.name}, age={self.age}, energy={self.energy})'
 
   def __str__(self):
-    return f'human(name={self.name}, age={self.age}, energy={self.energy})'
+    return(f"My name is {self.name} and I am {self.age} years old and I have {self.energy} energy.")
 
 if (__name__ == "__main__"):
   human = Human()
-  human.display()
+  print(human)
   print(human.__repr__())
   human.grow()
   human.move(10)
   human.eat(5)
   print(repr(human))
+

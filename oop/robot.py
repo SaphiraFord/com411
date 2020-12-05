@@ -11,11 +11,11 @@ class Robot:
     print(Robot.laws)
 
   # An initialiser (special instance method)
-  def __init__(self):
+  def __init__(self, name = "Robot", age = 0, energy = 0):
 
     # An instance attribute
-    self.name = "Robot"
-    self.age = 0
+    self.name = name
+    self.age = age
     self.energy = Robot.MAX_ENERGY
 
   #Method to grow the robot and + its age by 1
@@ -48,7 +48,7 @@ class Robot:
 
   # An instance method
   def display(self):
-    print(f"I am {self.name}")
+    print(f"My name is {self.name} and I am {self.age} years old and I have {self.energy} energy.")
 
   #Magic methods (repr) returns a formal string representation of the object whilst (str) returns an informal string representation of the object.
 
@@ -56,11 +56,11 @@ class Robot:
     return f'robot(name={self.name}, age={self.age}, energy={self.energy})'
 
   def __str__(self):
-    return f'robot(name={self.name}, age={self.age}, energy={self.energy})'
+    return(f"My name is {self.name} and I am {self.age} years old and I have {self.energy} energy.")
 
 if (__name__ == "__main__"):
   robot = Robot()
-  robot.display()
+  print(robot)
   print(robot.__repr__())
   robot.grow()
   robot.move(10)
