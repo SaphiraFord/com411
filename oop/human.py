@@ -62,4 +62,3 @@ if (__name__ == "__main__"):
   human.move(10)
   human.eat(5)
   print(repr(human))
-
