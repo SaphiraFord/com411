@@ -3,34 +3,44 @@ import matplotlib.pyplot as plt
 #Importing a csv module to add functions while dealing with reading an csv file
 import csv
 
+#Funtion to open the CSV file and read it
 def read_data():
+
+  #Creating an empty dictionary with lists nested within it
   data = {'survived':[], 'sex':[], 'age':[], 'fare':[]}
 
   with open('visual/plots/animations/titanic.csv') as file:
     csv_reader = csv.reader(file)
 
-    # ignore header
+    #Reading the headers line to ignore it so that the program can read the data
     header = next(csv_reader)
 
-    for line in csv_reader:
-      # extract required values using appropriate indexes
-      survived = line[1].strip()
-      sex = line[14].strip()
-      age = line[4].strip()
-      fare = line[8].strip()  
 
-      # only add the data to the dictionary if not empty
+    for line in csv_reader:
+      #Extracting required values, for exam on row 14 all of the sex's are listed while on row 4 all of the age's are listed
+      #The strip funtion removes any white space from the data 
+      survived = line[1].strip()
+      sex = line[4].strip()
+      age = line[5].strip()
+      fare = line[9].strip()  
+
+      #Only adding the data to the dictionary if sex, age and fare rows are all not empty
       if (survived != "" and sex != "" and age != "" and fare != ""):
+        #Appending survived data to dic and turning the data into a bool 
         data['survived'].append(bool(int(survived)))
 
-        if (int(sex) == 0): 
+        #Appending sex data to dic, female or male
+        if ((sex) == 0): 
           data['sex'].append('male')
         else:
           data['sex'].append('female')
         
+        #Appending age and fare to dic and making them floats
         data['age'].append(float(age))
+        #The fare is rounded to 2 decimal places
         data['fare'].append(round(float(fare), 2))
 
+  #Returning the data so it can be used outside of the function
   return data
 
 
@@ -176,17 +186,19 @@ def plot_all_vs_survival(ax, data):
 
 
 def run():
+  #Taking in the data taht we read in and formatted
   data = read_data()
 
-  # plots arranged in a 2 by 2 grid
+  #Creating plots arranged in a 2 by 2 grid
   fig, axs = plt.subplots(2, 2)
 
-  # display plots
+  #Displaying plots
   plot_age_vs_survival(axs[0, 0], data)
   plot_fare_vs_survival(axs[0, 1], data)
   plot_sex_vs_survival(axs[1, 0], data)
   plot_all_vs_survival(axs[1, 1], data)
   
+  #Making a tight layout for visual aid and then displaying the graph
   plt.tight_layout()
   plt.show()
 
