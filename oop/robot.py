@@ -1,7 +1,7 @@
 #Importing abstract class
 from inhabitant import Inhabitant
 #Robot class
-class Robot:
+class Robot(Inhabitant):
 
   #A class attribute 
   laws = "Protect, Obey and Survive"

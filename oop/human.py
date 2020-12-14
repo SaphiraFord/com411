@@ -1,7 +1,7 @@
 #Importing abstract class
 from inhabitant import Inhabitant
 #Human class
-class Human:
+class Human(Inhabitant):
 
 
   # An initialiser (special instance method)
