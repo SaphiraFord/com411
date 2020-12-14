@@ -29,14 +29,14 @@ class Universe:
     #Will pick a random number between 1 - 10 for number of robots and then make those robots
     for index in range(random.randint(1, 10)):
       robot = Robot(f"Robot{index}")
-      planet.add_robot(robot)
+      planet.add(robot)
 
 
 
     #Will pick a random number between 1 - 10 for number of humans and then make those humans
     for index in range(random.randint(1, 10)):
       human = Human(f"Human{index}")
-      planet.add_human(human)
+      planet.add(human)
 
 
     #Appending the planet that's just been created
@@ -55,6 +55,19 @@ class Universe:
     #planet = Universe.planets[ and the number of humans/robots will = the number of humans/robots stored in the inhabitants dictionary
     for index in range(num_subplots):
       planet = self.planets[index]
+
+      #Creating variables to store humans and robots in
+      num_humans = 0
+      num_robots = 0
+      #For every inhabitant in inhabitants check what instance of inhabitant it is aand if its human/robot + 1 to that category
+      for inhabitant in planet.inhabitants:
+        if isinstance(inhabitant, Human):
+          num_humans += 1
+        elif isinstance(inhabitant, Robot):
+          num_robots += 1
+
+
+
       num_humans = len(planet.inhabitants['humans'])
       num_robots = len(planet.inhabitants['robots'])
 
