@@ -6,16 +6,18 @@ class Robot(Inhabitant):
   #A class attribute 
   laws = "Protect, Obey and Survive"
 
-  # A class method
+  # A static method, which is bound to the class robot rather than an object
+  @staticmethod
   def the_laws():
     print(Robot.laws)
 
-  # An initialiser (special instance method)
-  def __init__(self, name = "Robot", age = 0, energy = 0):
+    #An initialiser (special instance method)
+  def __init__(self, name="Robot", age=0):
+    super().__init__(name, age)
 
   # An instance method
   def display(self):
-    print(f"My name is {self.name} and I am {self.age} years old and I have {self.energy} energy.")
+    print(f"I am {self.name}")
 
   #Magic methods (repr) returns a formal string representation of the object whilst (str) returns an informal string representation of the object.
 
@@ -27,9 +29,11 @@ class Robot(Inhabitant):
 
 if (__name__ == "__main__"):
   robot = Robot()
-  print(robot)
-  print(robot.__repr__())
-  robot.grow()
+  Robot.the_laws()
+  print(repr(robot))
   robot.move(10)
+  print(repr(robot))
   robot.eat(5)
+  print(repr(robot))
+  robot.eat(20)
   print(repr(robot))

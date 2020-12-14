@@ -1,6 +1,6 @@
-import clothing_size as ClothingSize
+from clothing_size import ClothingSize
 
-class Clothing():
+class Clothing:
 
   def __init__(self, colour, material, size):
     self.colour = colour
@@ -8,7 +8,7 @@ class Clothing():
     self.size = size
 
 if __name__ == "__main__":
-  my_clothing = Clothing("pink", "wool", ClothingSize.MEDIUM)
+  red_silk = Clothing("Red", "Silk", ClothingSize.MEDIUM)
 
-  if (my_clothing.size.value == ClothingSize.MEDIUM.value):
-    print("e")
+
+

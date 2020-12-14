@@ -1,40 +1,30 @@
-#Importing abstract class
-from inhabitant import Inhabitant
-#Creating a class called Planet and instantiating a dictionary called inhabitants with 2 empty lists, humans and robots inside
+#Importing robot and human classes
+from human import Human
+from robot import Robot
 
-class Planet():
-
+#Creating class planet with an empty list of inhabitants
+class Planet:
   #List of inhabitants
   def __init__(self):
     self.inhabitants = []
-
-    
-  #Returning values of inhabitants to output to the screen if prompted
+  #Methods to output list of inhabitants
   def __repr__(self):
     return f"planet(inhabitants={self.inhabitants})"
-
-  #An informal string saying that the planet has x amount of inhabitants
 
   def __str__(self):
     return f"This planet has {len(self.inhabitants)} inhabitants."
 
-  #Instance methods that will add and remove inhabitants
+  #Adding inhabitant
   def add(self, inhabitant):
-
     self.inhabitants.append(inhabitant)
-
+  #Removing inhabitant
   def remove(self, inhabitant):
+    self.inhabitants.remove(inhabitant)
 
-    self.inhabitants.append(inhabitant)
-
-    
-
-if(__name__ ==  "__main__"):
-    planet = Planet()
-    print(repr(planet))
-    prins = Inhabitant("Prins")
-    planet.add("Prins")
-    print(planet)
-    print(repr(planet))
-    
-
+if (__name__ == "__main__"):
+  planet = Planet()
+  print(repr(planet))
+  prins = Human("Prins")
+  planet.add(prins)
+  print(repr(planet))
+  print(planet)

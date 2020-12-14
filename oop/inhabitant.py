@@ -8,7 +8,7 @@ class Inhabitant(ABC):
   #Attributes common to other classes
   MAX_ENERGY = 100
 
-  def __init__(self, name="Inhabitant", age=0, energy=MAX_ENERGY):
+  def __init__(self, name="Inhabitant", age=0):
     #Instanced attributes
     self.name = name
     self.age = age

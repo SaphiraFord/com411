@@ -1,22 +1,36 @@
-from alien_tech import Tech
+#Importing tech as the derived class of the superclass laser
+from tech import Tech
 
 #Creating Laser which is a subclass of the abstract class Tech
+
 class Laser(Tech):
-  #Contsnat attribute
-  MAX_RANGE = 5
+
+  #Creating a constant of a maximum range
+  MAX_RANGE = 100
+
+  #Using the "super()" to give access to methods and properties of a parent or sibling class.
+  def __init__(self):
+    super().__init__()
+
+  def __repr__(self):
+    return "laser()"
 
   #Overiding the behaviours of the abstract methods
-  def activate(self):
-    print("Activating laser")
+  def activate():
+    print("Laser has been activated.")
 
-  #Firing has a shots distance and will check if its lower than MAX_RANGE and will say if shots are hitting or not
-  def fire(self):
-    shots_distance = 4
+  def deactivate():
+    print("Laser has been deactivated.")
 
-    if shots_distance < MAX_RANGE:
-      print(f"Laser shots hitting targets")
+  #Firing has a range distance and will check if its higher than MAX_RANGE and will output different outputs depending on the conditions
+
+  def fire(range_distance):
+    if (range_distance > Laser.MAX_RANGE):
+      print(f"Fired maximum range of {Laser.MAX_RANGE}")
     else:
-      print(f"Laser shots missing targets")
+      print(f"Fired a distance of {range_distance}")
 
-  def deactivate(self):
-    print("Deactivating laser")
+
+if __name__ == "__main__":
+  laser = Laser()
+  print(repr(laser))
